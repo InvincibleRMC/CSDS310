@@ -7,11 +7,12 @@ public static void main(String[] args) {
     int n =10;
     int[] A = magicArray(n);
     int[] B = magicArray(n);
-
+    int counter=0;
     boolean foundX=false;
         int i =1;
         int j =n;
         while(i<n && j>1){
+            counter++;
             if(A[i-1]+B[j-1]==x){
                 foundX=true;
                 break;
@@ -40,6 +41,8 @@ public static void main(String[] args) {
         else{
         System.out.println(false);
         }
+
+        System.out.println(counter);
 }
 
 
