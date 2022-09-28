@@ -51,16 +51,7 @@ public static void main(String[] args) {
 
     int bestPivotValLocation=-10000;
 
-    for(int i =low;i<high;i++){
-        if(c[i].equals(pivotDVal)){
-            bestPivotValLocation=i;
-            break;
-        }
-    }
-    if(bestPivotValLocation==-10000){
-        System.out.println("val is " + pivotDVal);
-        return pivotDVal;
-    }
+    
     System.out.println("PivotValInC " + bestPivotValLocation + " PivotVal " + pivotDVal );
 
     
@@ -77,6 +68,17 @@ public static void main(String[] args) {
 
     //System.out.println(Arrays.asList(c).subList(low, high) + " " +low + " " +high);
    
+
+    for(int i =low;i<high;i++){
+        if(c[i].equals(d[pivotC])){
+            bestPivotValLocation=i;
+            break;
+        }
+    }
+    if(bestPivotValLocation==-10000){
+        System.out.println("val is " + d[pivotC]);
+        return d[pivotC];
+    }
     
    System.out.println("pivotC= " + pivotC); //+ " d[pivotC]= " + d[pivotC] );
     System.out.println(" " + leftAmountC + " " + leftAmountD + " " + rightAmountC + " " + rightAmountD + " "  );
