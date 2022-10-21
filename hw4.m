@@ -39,20 +39,15 @@ function q = helper(left,right,o)
     end
 end
 
-
 function paren(values,operations,s,i,j)
 global counter;
 
-    if i==length(values)
-        fprintf("%d",values(i));
-        return;
-    end
     if i==j
-        fprintf("%d ",values(i));
+        fprintf("%d",values(i));
     else
      fprintf("(");
      paren(values,operations,s,i,s(i,j))
-     fprintf("%s ",operations(counter));
+     fprintf(" %s ",operations(counter));
      counter = counter +1;
      paren(values,operations,s,s(i,j)+1,j)
      fprintf(")");
