@@ -17,7 +17,7 @@ public class hw4q1 {
                 sInt[i][j] = (int) s[i][j];
             }
         }
-       // printOptimalParens(values, operations, sInt, 0, sInt.length-1);
+       printOptimalParens(values, operations, sInt, 1, sInt.length);
     }
 
     public static double[][][] dynamicProgramming(double[] values, String[] operations) {
@@ -77,14 +77,23 @@ public class hw4q1 {
         return s;
     }
     public static void printOptimalParens(double[] values, String[] operations, int[][] s,int i,int j){
+       // System.out.print("i=" + i + "j=" + j + "/");
+        if(i==values.length){
+            System.out.print(values[i]);
+        }
+
         if(i==j){
-            System.out.println(values[i] + " " + operations[i]);
+            System.out.print(values[i-1] + " " + operations[i-1] + " ");
+            if(i==values.length-1){
+                System.out.print(values[values.length-1]);
+            }
         }
         else{
-            System.out.println("(");
-            printOptimalParens(values,operations,s,i,s[i][j]);
-            printOptimalParens(values,operations,s,s[i][j]+1,j);
-            System.out.println(")");
+            System.out.print("(");
+            printOptimalParens(values,operations,s,i,s[i][j-1]);
+            printOptimalParens(values,operations,s,s[i][j-1]+1,j);
+           // System.out.print(values[values.length-1]);
+            System.out.print(")");
         }
     }
 
