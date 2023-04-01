@@ -17,7 +17,7 @@ public class hw4q1 {
                 sInt[i][j] = (int) s[i][j];
             }
         }
-    //printExpression(values,operations);
+    // printExpression(values,operations);
    // printOptimalParens(values, operations, sInt, 0, sInt.length-1);
     }
 
